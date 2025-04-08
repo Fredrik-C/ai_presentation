@@ -3,9 +3,6 @@
 ## Web content
 * use mcp 'fetch' for http docs
 
-## Workflow
-Follow task-completion-workflow.md
-
 ## Code Standards
 * Use LINQ & expressive syntax
 * Use C# 10+ features
@@ -26,16 +23,16 @@ Follow task-completion-workflow.md
 
 ## .NET Guidelines
 * Use C# 10+ features
-* Prefer DateTimeOffset/NodaTime
+* Prefer DateTimeOffset/NodaTime, avoid DateTime
 * Use file-scoped namespaces
 * Use Autofac for DI
 * Async/await for I/O operations
 * Optimize LINQ (avoid N+1)
-* Use xUnit and Shouldly (nuget package) for .Net tests
+* Use xUnit and FakeItEasy for mocks (nuget package) for .Net tests
 
 ## Completion Requirements
 Use tool 'attempt_completion' with:
 * Implementation completion
 * Test coverage completion
 * Memory Bank progress updated
-* Any remaining TODOs 
+* No remaining TODOs 

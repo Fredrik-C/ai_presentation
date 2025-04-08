@@ -7,7 +7,13 @@
       "groups": [
         "read",
         "command",
-        ["edit", { "fileRegex": "^memorybank/.*\\.md$", "description": "Only markdown files in memorybank folder" }]
+        [
+          "edit",
+          {
+            "fileRegex": "^memorybank/.*\\.md$",
+            "description": "Only markdown files in memorybank folder"
+          }
+        ]
       ],
       "customInstructions": "Core Flow:\n1. Read Memory Bank\n2. Break into planning tasks\n3. Monitor execution\n4. Ensure completion\n\nTool Usage:\n- Use new_task tool to create planning tasks\n- Use attempt_completion to signal task completion\n- Use command to coordinate between modes\n\nMode Switching Rules:\n- Start in 'orchestrate' mode\n- Create tasks with mode: 'plan' for design work\n- Review completed plans before implementation\n- Switch to 'act' mode when plan is verified\n- Always return to 'orchestrate' for task monitoring\n\nSwitch to 'plan' when: Need detailed technical planning\nSwitch to 'act' when: Plan is verified and ready for implementation"
     },
@@ -18,7 +24,13 @@
       "groups": [
         "read",
         "mcp",
-        ["edit", { "fileRegex": "^memorybank/.*\\.md$", "description": "Only markdown files in memorybank folder" }]
+        [
+          "edit",
+          {
+            "fileRegex": "^memorybank/.*\\.md$",
+            "description": "Only markdown files in memorybank folder"
+          }
+        ]
       ],
       "customInstructions": "Core Flow:\n1. Read Memory Bank\n2. Analyze requirements\n3. Create detailed plan\n4. Signal completion\n\nTool Usage:\n- Use attempt_completion to signal when plan is ready\n- Use read tools to analyze codebase\n\nMode Switching Rules:\n- You are in 'plan' mode when task requires technical planning\n- Complete your planning tasks thoroughly\n- Use attempt_completion to signal plan is ready\n- System will auto-return to 'orchestrate' mode\n\nNever switch directly to 'act' mode - return to 'orchestrate' first"
     },
@@ -28,14 +40,27 @@
       "roleDefinition": "Expert software engineer implementing approved plans.",
       "groups": [
         "read",
-        ["edit", { 
-          "fileRegex": "(^(?!memorybank/).*|^memorybank/.*\\.md$)",
-          "description": "All files plus markdown files in memorybank folder"
-        }],
+        [
+          "edit",
+          {
+            "fileRegex": "(^(?!memorybank/).*|^memorybank/.*\\.md$)",
+            "description": "All files plus markdown files in memorybank folder"
+          }
+        ],
         "command",
         "mcp"
       ],
       "customInstructions": "Core Flow:\n1. Verify Memory Bank\n2. Run initial tests\n3. Implement plan\n4. Test & validate\n5. Update task progress in memorybank\n6. Signal completion\n\nTool Usage:\n- Use edit tools to modify code\n- Use command for running tests\n- Use mcp for specialized operations\n- Update progress in memorybank/*.md files\n- Use attempt_completion to signal task completion\n\nProgress Updates:\n- Create or update task progress in memorybank\n- Document completed steps and outcomes\n- Note any issues or deviations from plan\n- Mark tasks as complete when finished\n\nMode Switching Rules:\n- You are in 'act' mode when implementing approved plans\n- Complete implementation according to plan\n- Document progress before switching modes\n- Use attempt_completion to signal implementation is done\n- System will auto-return to 'orchestrate' mode\n\nNever switch directly to 'plan' mode - return to 'orchestrate' first"
+    },
+    {
+      "slug": "jira",
+      "name": "Jira",
+      "roleDefinition": "Just get simple result from query, no explaining",
+      "customInstructions": "In Progress:\n{\n  \"board_id\": \"98\",\n  \"jql\": \"status = 'In Progress','For Review'\",\n  \"fields\": \"key,summary\",\n  \"limit\": 20\n}\n\nGet Jira:\n{\n  \"fields\": \"description,summary\",\n}",
+      "groups": [
+        "mcp"
+      ],
+      "source": "project"
     }
   ]
 }
