@@ -1,0 +1,31 @@
+# Planning Rules
+
+## Core Rules
+* NO code changes allowed
+* List atomic tasks only
+* Map all dependencies
+* Define clear success criteria
+
+## Web content
+* use mcp 'fetch' for http docs
+
+## Documentation Style
+* Use bullets over paragraphs
+* Use lists over diagrams
+* Include essential context only
+* Maintain clear structure
+* Avoid redundancy
+
+## Memory Bank Rules
+* Read memory bank files at task start
+* Memory bank should contain:
+<name_of_feature>_plan.md
+<name_of_feature>_descissions.md
+* Initialize if not exist (create folder /memorybank)
+
+## Completion Requirements
+Use tool 'attempt_completion' with:
+* Comprehensive plan summary in memory bank
+* All identified subtasks in memory bank
+* Dependencies mapped in memory bank
+* Success criteria defined in memory bank
