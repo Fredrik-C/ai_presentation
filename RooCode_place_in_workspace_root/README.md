@@ -6,7 +6,7 @@
 ## Plannering, arbetsflöde
 Om det är en lite mer komplicerad uppgift, så som en userstory använd följande flöde:
 - Börja med att få arbetet plannerat och nedbrutet i mode `VT Tech Lead`<br>
-![VT Tech Lead](readme_images\1_tl_mode.png)
+![VT Tech Lead](/readme_images/1_tl_mode.png)
 - När AI:t är klart, inspektera planen i "memorybank" mappen och dess arbetsspår, redigera och så önskas.
 - ![Memorybank](readme_images\2_memory_bank.png)
 
