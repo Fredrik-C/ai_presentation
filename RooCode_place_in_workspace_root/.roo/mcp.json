@@ -1,5 +1,25 @@
 {
   "mcpServers": {
+    "filesystem": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "c:\\git"
+      ],
+      "disabled": true,
+      "alwaysAllow": [
+        "read_file",
+        "read_multiple_files",
+        "list_directory",
+        "directory_tree",
+        "search_files",
+        "get_file_info",
+        "list_allowed_directories"
+      ]
+    },
     "puppeteer": {
       "command": "cmd",
       "args": [
@@ -15,7 +35,8 @@
         "puppeteer_select",
         "puppeteer_hover",
         "puppeteer_evaluate"
-      ]
+      ],
+      "disabled": true
     },
     "brave-search": {
       "command": "cmd",
@@ -32,7 +53,7 @@
         "brave_web_search",
         "brave_local_search"
       ],
-      "disabled": false
+      "disabled": true
     },
     "fetch": {
       "command": "uvx",
@@ -41,7 +62,8 @@
       ],
       "alwaysAllow": [
         "fetch"
-      ]
+      ],
+      "disabled": true
     }
   }
 }
